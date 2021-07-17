@@ -1,18 +1,26 @@
 import java.util.Scanner;
-class Isc2014
+// OBSERVATION #0
+// What was the name of the super class given in the 
+// question?
+// class Isc2014
+class Stock
 {
   String item;
   int qty;
   double rate;
   double amt;
   
-  Stock()
-  {
-    item="";
-    qty=0;
-    amt =0.0;
-    rate=0.0;
-  }
+  // OBSERVATION #1
+  // Did the question ask to implement the default 
+  // constructor?
+  // Stock()
+  // {
+  //   item="";
+  //   qty=0;
+  //   amt =0.0;
+  //   rate=0.0;
+  // }
+
   Stock(String item,int qty, double amt , double rate)
   {
     this.item = item;
@@ -20,12 +28,15 @@ class Isc2014
     this.amt = amt;
     this.rate= rate;
   }
+
   void display()
   {
     System.out.println("Item: " + item);
     System.out.println("Quantity: " + qty);     
     System.out.println("Rate: " + rate);
-    
+    // OBSERVATION #2
+    // You forgot to display the amount.
+    System.out.println("Amount: " + amt);
   }
 }
 
@@ -42,6 +53,13 @@ class Purchase extends Stock
   void update()
   {
       qty= qty+pqty;
+      // OBSERVATION #3
+      // I know, there's no need for an if here, 
+      // because if rate == prate, assignment makes
+      // no difference, but if rate != prate then
+      // the job of assignment is done. Ask your maam
+      // to comment on this, to see if an explicit
+      // if is required here or not.
       rate=prate;
       amt = qty*rate;
   }
@@ -54,10 +72,10 @@ class Purchase extends Stock
       System.out.println("Quantity: " + qty);     
       System.out.println("Rate: " + rate);
       System.out.println("Amount : "+amt);
-      
   }
 }
 
+// Scored - 9 points
 class Isc2014
 {
   public static void main(String[]args)
