@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.Scanner;
+
+class File1{
+  public static void main(String[]args)throws IOException{
+    Scanner sc = new Scanner(System.in);
+
+    System.out.print("Enter name of the input file: ");
+    String inFileName = sc.nextLine();
+
+    System.out.print("Enter name of the output file: ");
+    String outFileName = sc.nextLine();
+
+    FileInputStream fin = new FileInputStream(inFileName);
+    FileOutputStream fout = new FileOutputStream(outFileName);
+
+    int readByte;
+    // Reading from a file until EOF is reached
+    while((readByte = fin.read()) != -1){
+      // Writing to the file
+      fout.write(readByte);
+    }
+
+    fin.close();
+    fout.close();
+  }
+}
