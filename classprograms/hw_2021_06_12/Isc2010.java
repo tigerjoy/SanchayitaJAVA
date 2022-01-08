@@ -1,4 +1,5 @@
 import java.util.Scanner;
+// Scored - 10 points
 class Worker 
 {
   String name;

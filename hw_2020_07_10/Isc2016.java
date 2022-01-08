@@ -1,19 +1,19 @@
 import java.util.Scanner;
- class Bank 
+class Bank 
 {
   String name;
   String accno;
   double p;
 
- // OBSERVATION #1
- // Does the question ask you to implement the
- // default constructor? 
- Bank()
-  {
-    name="";
-    accno="";
-    p=0.0;
-  }
+  // OBSERVATION #1
+  // Does the question ask you to implement the
+  // default constructor? 
+  // Bank()
+  // {
+  //   name="";
+  //   accno="";
+  //   p=0.0;
+  // }
   Bank(String name,String accno, double p)
   {
     this.name = name;
@@ -45,18 +45,28 @@ class Account extends Bank
   }
   // OBSERVATION #2
   // Wrong logic. You account balance should never 
-  // become zero.
+  // become negative.
   void withdrawal()
   {
-      p-=amt;
-      if(p<0)
-      {
-          System.out.println("INSUFFICIENT BALANCE");
-      }
-      else if(p<500)
-        {
-           p=(p-(500-p))/10.0;       
-        }
+    if(amt > p)
+    {
+      System.out.println("INSUFFICIENT BALANCE");
+    }
+    else
+    {
+      p -= amt;
+    }
+    // p-=amt;
+    // if(p<0)
+    // {
+    //   System.out.println("INSUFFICIENT BALANCE");
+    //   p += amt;
+    // }
+    // else if(p<500)
+    if(p<500)
+    {
+        p=(p-(500-p))/10.0;       
+    }
      
   }
   // OBSERVATION #3
@@ -66,8 +76,7 @@ class Account extends Bank
    void display()
   {
       super.display();
-      
-      System.out.println("Balance:"+p);
+      // System.out.println("Balance:"+p);
   }
 }
 

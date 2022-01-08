@@ -22,12 +22,18 @@ class Record
       sc.nextLine();
     }
   }
+  // OBSERVATION #1
+  // Although this works as int is automatically converted
+  // to a String in Java, this does not work in other
+  // programming languages. Always use %d with an int.
   void display()
   {
-    System.out.printf("%-15s %s\n", "NAME", "MARKS");
+    // System.out.printf("%-15s %s\n", "NAME", "MARKS");
+    System.out.printf("%-15s %d\n", "NAME", "MARKS");
     for(int i = 0;i<size;i++)
     {
-      System.out.printf("%-15s %s\n", n[i], m[i]);
+      // System.out.printf("%-15s %s\n", n[i], m[i]);
+      System.out.printf("%-15s %d\n", n[i], m[i]);
     }
   }
 }
@@ -58,6 +64,7 @@ class Highest extends Record
   }
 }
 
+// Scored - 10 points
 class Isc2019
 {
   public static void main(String[]args)

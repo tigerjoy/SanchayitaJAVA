@@ -83,6 +83,7 @@ class Compute extends Library
   }
 }
 
+// Scored - 10 points
 class Isc2009
 {
   public static void main(String[]args)
